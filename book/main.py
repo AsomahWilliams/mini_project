@@ -25,7 +25,7 @@ class Borrowing(BaseModel):
     return_date: datetime
 
 # In-memory storage
-books = [Book(id=i, title=f"Book {i}", author=f"Author {i}") for i in range(1, 101)]
+books = [Book(id=i, title=f"Book {i}", author=f"Author {i}") for i in range(1, 10)]
 borrowers = []
 borrowings = []
 
@@ -87,4 +87,4 @@ def return_book(book_id: int, borrower_id: int):
 @app.get("/borrowings/{borrower_id}", response_model=List[Borrowing])
 def get_borrowed_books(borrower_id: int):
     borrowed_books = [b for b in borrowings if b.borrower_id == borrower_id]
-    return borrowed_books . explain the code and  what it represents
+    return borrowed_books 
